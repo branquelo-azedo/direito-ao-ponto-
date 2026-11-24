@@ -96,6 +96,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            margin-right: 8px;
             transition: all 0.2s ease; /* Animação suave */
         }
 
@@ -140,13 +141,14 @@
     </main>
 
     <script>
-        const botao = document.querySelector("button");
-        botao.addEventListener("click", botaoClicado);
+        const botoes = document.querySelectorAll("button");
 
-        function botaoClicado() {
-            let texto = botao.querySelector("span");
-            texto.textContent++;
-        }
+        botoes.forEach(function(botao) {
+            botao.addEventListener("click", function() {
+                let texto = botao.querySelector("span");
+                texto.textContent = Number(texto.textContent) + 1;
+            });
+        });
     </script>
 </body>
 </html>
